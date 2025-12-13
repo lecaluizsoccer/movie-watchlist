@@ -14,7 +14,7 @@ body.addEventListener("click", (e) => {
 
 
 function apiMovie(movie) {
-    fetch(`http://www.omdbapi.com/?apikey=85d6dea4&t=${movie}`)
+    fetch(`https://www.omdbapi.com/?apikey=85d6dea4&t=${movie}`)
       .then((response) => response.json())
       .then((data) =>
         console.log(data)(
