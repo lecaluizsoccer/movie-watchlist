@@ -2,12 +2,11 @@
 const mainContainer = document.querySelector(".main-container")
 const body = document.querySelector("body")
 const inputValue = document.querySelector("input")
-const previewDiv = document.querySelector(".preview")
 
 body.addEventListener("click", (e) => {
 
     if(e.target.classList.contains("btn")){
-        // previewDiv.style.display = "none"
+      
         apiMovie(inputValue.value);
     }
     
