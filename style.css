@@ -32,11 +32,13 @@ header {
 }
 .movie-details h2 {
     font-size: 1.25rem;
+    margin-bottom: 0.5em;
 }
 
-.movie-details h2 span{
+.ratings{
     font-size: 1rem;
-    padding-left: 2rem;
+    font-weight: 500;
+    padding-left: 0.65rem;
 }
 
 
@@ -85,7 +87,6 @@ button {
     padding: 4em 0.75em 0 0.75em;
     display: flex;
     flex-wrap: wrap;
-    gap: 2em;
     justify-content: center;
     align-items: center;
     width: auto;
@@ -97,9 +98,18 @@ button {
     display: none;
 }
 
-img {
-    width: 90px;
-    height: 160px;
+.img-div {
+    max-width: 100px;
+    max-height: 200px;
+
+}
+
+img{
+
+    object-fit: fill;
+    width: 100%;
+    height: 100%;
+    
 }
 
 .movieInfo-container {
@@ -115,9 +125,10 @@ img {
     justify-content: space-between;
     align-items: center;
     gap: 4px;
+    font-size: 0.85rem;
 }
 
-.plus-sign  {
+.plus-sign, .minus-sign  {
     background-color: black;
     color: white;
     font-weight: 900;
@@ -129,24 +140,25 @@ img {
     cursor: pointer;
 }
 
-.movie-details {
-    width: 70%;
-    margin: auto;
+.plus-sign:hover, .minus-sign:hover, .my-watchlist:hover{
+    cursor: pointer;
+    color: grey;
 }
 
-p {
-    font-size: 0.75rem;
+.movie-details {
+    width: 70%;
+    margin: 0 0 0 0.75em;
 }
 
 .movie-description {
     margin-top: 1em;
+    font-size: 0.95rem;
 }
 
 .movie-box {
     display: flex;
     max-width: 500px;
     width: 100%;
-    gap: 1em;
 }
 
 .fa-search {
@@ -156,7 +168,35 @@ p {
     color: grey;
 }
 
+.star {
+    color: goldenrod;
+    padding-left: 0.5em;
+}
+
+.movie-info {
+    font-size: 0.85rem;
+}
+
+.line-below {
+    border: solid rgba(128, 128, 128, 0.308) 1px;
+    width: 100%;
+    margin: 1em 0 1em;
 
 
+}
 
 
+@media(max-width: 400px) {
+    .movieInfo-container{
+        flex-direction: column;
+        align-items: start;
+    }
+
+    .watchlist-div {
+        align-self: end;
+    }
+
+    .movie-description {
+        font-size: 0.75rem;
+    }
+}
