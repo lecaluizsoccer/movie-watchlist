@@ -1,7 +1,7 @@
 const mainContainer = document.querySelector(".main-container")
 const body = document.querySelector("body")
 const inputValue = document.querySelector("input")
-let preview = document.querySelector("#preview")
+
 
 let watchlist = JSON.parse(localStorage.getItem("watchlist")) || [];
 let currentMovie = null;
@@ -12,7 +12,9 @@ body.addEventListener("click", async (e) => {
 
         const data = await apiMovie(inputValue.value)
         if (!data || data.Response === "False") {
-            preview.innerText = "Movie not found!";
+            mainContainer.innerHTML = `<div class="preview">
+                <h2 id="preview">Movie not found!</h2>
+            </div>`;
         
             return;
         } else {
