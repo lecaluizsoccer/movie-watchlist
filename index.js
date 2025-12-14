@@ -1,6 +1,7 @@
 const mainContainer = document.querySelector(".main-container")
 const body = document.querySelector("body")
 const inputValue = document.querySelector("input")
+const preview = document.querySelector("#preview");
 
 
 let watchlist = JSON.parse(localStorage.getItem("watchlist")) || [];
