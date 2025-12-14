@@ -99,16 +99,18 @@ button {
 }
 
 .img-div {
-    max-width: 100px;
-    max-height: 200px;
+    width: 100px;
+    height: 180px;
+    flex-shrink: 0;
 
 }
 
-img{
+.img-div img{
 
-    object-fit: fill;
+    object-fit: cover;
     width: 100%;
     height: 100%;
+    border-radius: 4px;
     
 }
 
@@ -118,6 +120,7 @@ img{
     align-items: center;
     flex-wrap: wrap;
     gap: 8px;
+    margin-bottom: 0.75em;
 }
 
 .watchlist-div {
@@ -145,20 +148,27 @@ img{
     color: grey;
 }
 
+
 .movie-details {
-    width: 70%;
-    margin: 0 0 0 0.75em;
+    flex: 1;
+    min-width: 0;
 }
 
+
 .movie-description {
-    margin-top: 1em;
-    font-size: 0.95rem;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
 }
+
 
 .movie-box {
     display: flex;
-    max-width: 500px;
+    align-items: flex-start;
+    gap: 1em;
     width: 100%;
+    max-width: 600px;
 }
 
 .fa-search {
