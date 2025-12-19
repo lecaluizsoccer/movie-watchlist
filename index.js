@@ -55,33 +55,40 @@ body.addEventListener("click", (e) => {
 
 
 async function apiMovie(movie) {
-    const response = await fetch(`https://www.omdbapi.com/?apikey=85d6dea4&t=${movie}`)
+    try {
+        const response = await fetch(
+        `https://www.omdbapi.com/?apikey=85d6dea4&t=${movie}`
+        );
 
-    const data = await response.json()
+        const data = await response.json();
 
-    currentMovie = data;
+        currentMovie = data;
 
-          mainContainer.innerHTML = `<div class="movie-box">
-                    <div class="img-div">
-                        <img src="${data.Poster}" alt="">
-                    </div>
-                    <div class="movie-details">
-                        <h2 class="movie-title">${data.Title}<span class="star">★</span> <span class="ratings">${data.Ratings[0].Value}</h2></span>
-                        <div class="movieInfo-container">
-                            <p class="movie-info">${data.Runtime} ${data.Genre}</p>
-                            <div class="watchlist-div">
-                                <p class="plus-sign">﹢</p>
-                                <p>Watchlist</p>
-                            </div>
+        mainContainer.innerHTML = `<div class="movie-box">
+                        <div class="img-div">
+                            <img src="${data.Poster}" alt="">
                         </div>
-                        <p class="movie-description">
-                            ${data.Plot}
-                        </p>
-                    </div>
-                    
-                </div>`
+                        <div class="movie-details">
+                            <h2 class="movie-title">${data.Title}<span class="star">★</span> <span class="ratings">${data.Ratings[0].Value}</h2></span>
+                            <div class="movieInfo-container">
+                                <p class="movie-info">${data.Runtime} ${data.Genre}</p>
+                                <div class="watchlist-div">
+                                    <p class="plus-sign">﹢</p>
+                                    <p>Watchlist</p>
+                                </div>
+                            </div>
+                            <p class="movie-description">
+                                ${data.Plot}
+                            </p>
+                        </div>
+                        
+                    </div>`;
 
-                return data
+        return data;
+    } catch (err) {
+        mainContainer.innerHTML = `<p class="movie-not-found">Movie not found</p>`
+    }
+    
                 
 }
 

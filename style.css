@@ -198,6 +198,12 @@ img{
     color: rgb(202, 202, 202);
 }
 
+.movie-not-found{
+    font-size: 2rem;
+    color: grey;
+    margin-top: 3em;
+}
+
 
 @media(max-width: 400px) {
     .movieInfo-container{
